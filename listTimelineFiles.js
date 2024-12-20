@@ -1,0 +1,1 @@
+import fs from 'fs'; import path from 'path'; const listFiles = (dir) => { fs.readdirSync(dir).forEach(file => { const fullPath = path.join(dir, file); if (fs.statSync(fullPath).isDirectory()) { listFiles(fullPath); } else { console.log(fullPath); } }); }; listFiles('./src/components/timeline');
